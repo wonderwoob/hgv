@@ -62,7 +62,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.provider "virtualbox" do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "1024"]
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
         vb.name = vagrant_name
@@ -97,7 +97,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vm.vmx["displayname"] = vagrant_name
     end
 
-    config.vm.synced_folder "./hgv_data", "/hgv_data", owner: "www-data", group: "www-data", create: "true"
+    config.vm.synced_folder "./hgv_data", "/hgv_data", owner: "vagrant", group: "www-data", create: "true"
 
     config.vm.synced_folders.each do |id, options|
         # Make sure we use Samba for file mounts on Windows
