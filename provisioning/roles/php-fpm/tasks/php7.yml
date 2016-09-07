@@ -7,7 +7,7 @@
 
 - name: Download PHP 7 deb
   get_url:
-    url="https://s3-us-west-2.amazonaws.com/com.wpengine.labs-packages/php7-nightly_160131_amd64.deb" 
+    url="https://s3-us-west-2.amazonaws.com/com.wpengine.labs-packages/php7-nightly_160131_amd64.deb"
     dest="/tmp/php7-nightly_160131_amd64.deb"
     timeout=120
   when: deb_check_php7.rc == 1

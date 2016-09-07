@@ -20,14 +20,14 @@ def domains_from_yml(file)
     ret = []
     domains = YAML.load_file(file)
     domains.each do |key, value|
-        # hhvm_domains are mandatory in user-supplied files
-        value['hhvm_domains'].each do |domain|
+        # php_domains are mandatory in user-supplied files
+        value['php_domains'].each do |domain|
             ret.push(domain)
             ret.push('cache.' << domain)
         end
-        # php_domains are optional in the user specified file
-        unless value['php_domains'].nil?
-            value['php_domains'].each do |domain|
+        # hhvm_domains are optional in the user specified file
+        unless value['hhvm_domains'].nil?
+            value['hhvm_domains'].each do |domain|
                 ret.push(domain)
                 ret.push('cache.' << domain)
             end
