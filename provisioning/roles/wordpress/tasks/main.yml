@@ -15,10 +15,10 @@
   register: wp_sql
 
 - name: "Grant {{ enviro }} WP users access to WP DBs"
-  mysql_user: name="wpe_{{ enviro }}" priv="wpe_{{ enviro }}.*:ALL" host="%" password=wordpress state=present
+  mysql_user: name="{{ enviro }}" priv="wpe_{{ enviro }}.*:ALL" host="%" password=wordpress state=present
 
 - name: "Grant {{ enviro }} WP users access to WP DBs"
-  mysql_user: name="wpe_{{ enviro }}" priv="wpe_{{ enviro }}.*:ALL" host="localhost" password=wordpress state=present
+  mysql_user: name="{{ enviro }}" priv="wpe_{{ enviro }}.*:ALL" host="localhost" password=wordpress state=present
 
 - name: "Set up {{ enviro }} docroot"
   file: path={{ wp_doc_root }}/{{ enviro }} state=directory owner={{ web_user }} group={{ web_group }}
@@ -71,9 +71,6 @@
 
 - name: "Localconfig for {{ enviro }}"
   template: src=wp/local-config.php dest={{ wp_doc_root }}/{{ enviro }}/local-config.php owner={{ web_user }} group={{ web_group }}
-
-- name: "Object Cache for {{ enviro }}"
-  template: src=wp/object-cache.php dest={{ wp_doc_root }}/{{ enviro }}/wp-content/object-cache.php owner={{ web_user }} group={{ web_group }}
 
 - name: "Check whether the WP install has been run previously"
   command: /usr/local/bin/wp core is-installed --path={{ wp_doc_root }}/{{ enviro }}

@@ -1,4 +1,5 @@
 ---
+
 - name: Check if PHP7 is installed
   command: dpkg-query -W php7-nightly
   register: deb_check_php7

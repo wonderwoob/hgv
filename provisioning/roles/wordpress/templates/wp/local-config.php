@@ -4,7 +4,7 @@
 define('DB_NAME', 'wpe_{{ enviro }}');
 
 /** MySQL database username */
-define('DB_USER', 'wpe_{{ enviro }}');
+define('DB_USER', '{{ enviro }}');
 
 /** MySQL database password */
 define('DB_PASSWORD', 'wordpress');
