@@ -1,0 +1,7 @@
+---
+wp:
+  enviro: askfitnesscoach
+  hhvm_domains:
+    - hhvm-dev.askfitnesscoach.com
+  php_domains:
+    - dev.askfitnesscoach.com

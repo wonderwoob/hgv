@@ -1,7 +1,8 @@
 .DS_Store
 .bundle
 .vagrant/
-hgv_data/
+hgv_data/*
+!hgv_data/config/
 node_modules/
 Customfile
 vendor

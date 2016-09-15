@@ -1,0 +1,7 @@
+---
+wp:
+  enviro: trainerlindsey
+  hhvm_domains:
+    - hhvm-dev.trainerlindsey.com
+  php_domains:
+    - dev.trainerlindsey.com
