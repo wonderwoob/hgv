@@ -1,0 +1,7 @@
+---
+wp:
+  enviro: idealfit
+  hhvm_domains:
+    - hhvm-dev.idealfit.com
+  php_domains:
+    - dev.idealfit.com
