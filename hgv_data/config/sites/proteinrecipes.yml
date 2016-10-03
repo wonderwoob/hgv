@@ -1,0 +1,7 @@
+---
+wp:
+  enviro: proteinrecipes
+  hhvm_domains:
+    - hhvm-dev.proteinrecipes.com
+  php_domains:
+    - dev.proteinrecipes.com
