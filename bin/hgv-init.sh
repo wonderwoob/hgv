@@ -64,4 +64,10 @@ export ANSIBLE_FORCE_COLOR=true
 if [ -e "/vagrant/hgv_data/config/provisioning/ansible.yml" ] ; then
     EXTRA="@/vagrant/hgv_data/config/provisioning/ansible.yml"
 fi
+
+# Reset home directory of vagrant user
+if ! grep -q "cd /hgv_data/sites" /home/vagrant/.profile; then
+    echo "cd /hgv_data/sites" >> /home/vagrant/.profile
+fi
+
 $ANS_BIN /vagrant/provisioning/playbook.yml -i'127.0.0.1,' --extra-vars="$EXTRA"
