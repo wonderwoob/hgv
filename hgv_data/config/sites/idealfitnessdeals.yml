@@ -1,0 +1,7 @@
+---
+wp:
+  enviro: ifd
+  hhvm_domains:
+    - hhvm-dev.idealfitnessdeals.com
+  php_domains:
+    - dev.idealfitnessdeals.com
